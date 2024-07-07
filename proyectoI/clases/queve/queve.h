@@ -1,11 +1,11 @@
 #pragma once
-#include "../node/node.cpp"
+#include "../node/nodeCola.cpp"
 
 template<class T>
 class Queue {
 private:
-    Node<T>* head = NULL;
-    Node<T>* tail = NULL;
+    NodeCola<T>* head = NULL;
+    NodeCola<T>* tail = NULL;
     int length = 0;
 
 public:

@@ -1,6 +1,6 @@
 #include<iostream>
 #include "./queve.h"
-#include "queve.h"
+#include "../stack/stack.h"
 
 using namespace std;
 
@@ -12,7 +12,7 @@ bool Queue<T>::isEmpty()
 template<class T>
 void Queue<T>::push(T data)
 {       
-   Node <T> *node = new Node<T>(data,NULL);
+   NodeCola <T> *node = new NodeCola<T>(data,NULL);
    if(isEmpty())
    {
       head=node;
@@ -34,7 +34,7 @@ T Queue<T>::pop(){
       return data;
    }
 
-   Node <T> *node = head;
+   NodeCola<T> *node = head;
 
    head=head->getNextNode();
    data = node->getData();
@@ -79,19 +79,21 @@ T Queue<T>::obtenerMin(Queue<T> colaOriginal, Queue<T> colaAuxiliar, T min)
          colaAuxiliar.push(data); // Agregar otros elementos a la cola auxiliar
       }
    }
+   
    return min;
 }
 
-template<class T>
+template <class T>
 Queue<T> Queue<T>::ordenarCola(Queue<T> colaOriginal)
 {
-   Queue<T> colaAuxiliar; // Declarar la cola auxiliar antes del bucle
+   Queue<T> colaAuxiliar;
    T min;
 
-   while (!colaOriginal.isEmpty()) 
+   while (!colaOriginal.isEmpty())
    {
-      min = colaOriginal.pop(); // Obtén el primer elemento de la cola original
-      colaAuxiliar.push(obtenerMin(colaOriginal, colaAuxiliar, min)); 
+      min = colaOriginal.pop();
+      colaAuxiliar.push(obtenerMin(colaOriginal, colaAuxiliar, min));
    }
+   
    return colaAuxiliar;
 }

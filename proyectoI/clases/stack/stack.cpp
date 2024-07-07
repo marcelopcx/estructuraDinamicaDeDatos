@@ -11,7 +11,7 @@ bool Stack<T>::isEmpty(){
 template <class T>
 void Stack<T>::push(T data)
 {
-   Node<T>* node = new Node<T>(data, head);
+   NodePila<T>* node = new NodePila<T>(data, head);
    head = node;
 }
 
@@ -24,7 +24,7 @@ T Stack<T>::pop()
       return data;
    }
 
-   Node<T>* node = head;
+   NodePila<T>* node = head;
 
    head = head->getNextNode();
    data = node->getData();

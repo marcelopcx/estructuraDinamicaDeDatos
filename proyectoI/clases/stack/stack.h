@@ -4,7 +4,7 @@
 template<class T>
 class Stack {
 private:
-    Node<T>* head = nullptr;
+    NodePila<T>* head = NULL;
     int length = 0;
 
 public:
