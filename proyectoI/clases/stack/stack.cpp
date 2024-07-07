@@ -33,6 +33,16 @@ T Stack<T>::pop()
    return data;
 }
 
+template <class T>
+T Stack<T>::top()
+{
+   while(!isEmpty())
+   {
+      return head->getData();
+   }
+   return 0;
+}
+
 template<class T>
 void Stack<T>::print()
 { 
@@ -40,4 +50,24 @@ void Stack<T>::print()
    {
       cout<< pop() <<endl;
    }
+}
+
+template<class T>
+Stack<T> Stack<T>::ordenarPila(Stack<T> pilaOriginal)
+{
+    Stack<T> pilaAuxiliar;
+
+    while (!pilaOriginal.isEmpty())
+    {
+        T min = pilaOriginal.pop();
+
+        while (!pilaAuxiliar.isEmpty() && pilaAuxiliar.top() < min)
+        {
+            pilaOriginal.push(pilaAuxiliar.pop());
+        }
+
+        pilaAuxiliar.push(min);
+    }
+
+    return pilaAuxiliar;
 }
