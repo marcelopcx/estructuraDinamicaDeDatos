@@ -11,8 +11,8 @@ int main()
     fstream archivoPilas;
     fstream archivoColas;
 
-    archivoPilas.open("assets/queue.csv", fstream::in);
-    archivoColas.open("assets/stack.csv", fstream::in);
+    archivoPilas.open("assets/stack.csv", fstream::in);
+    archivoColas.open("assets/queue.csv", fstream::in);
 
 
     if (!archivoPilas.is_open() && !archivoColas.is_open())
@@ -60,7 +60,7 @@ int main()
         }
 
         // Imprime las pilas en la lista
-        cout << "Pilas (" << numPila << "):" << endl<<endl;
+        cout << "Pilas en orden ascendente:" << endl<<endl;
         printPilas(listaPilas); cout<< endl<<endl;
         cout<<"El numero de pilas impresas en patalla fueron: " << numPila <<endl<<endl;
     }
@@ -91,7 +91,7 @@ int main()
         }
 
         // Imprime las cola en la lista
-        cout << "Colas (" << numCola << "):" << endl<<endl;
+        cout << "Colas en orden ascendente:" << endl<<endl;
         printColas(listaColas); cout<< endl<<endl;
         cout<<"El numero de colas impresas en patalla fueron: " << numCola <<endl<<endl;
     }

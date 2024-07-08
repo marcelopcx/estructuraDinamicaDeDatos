@@ -51,6 +51,8 @@ void Stack<T>::print()
       cout<< pop() <<endl;
    }
 }
+ 
+// Metodos de Ordenamiento
 
 template<class T>
 Stack<T> Stack<T>::ordenarPila(Stack<T> pilaOriginal)

@@ -15,8 +15,9 @@ public:
     T pop();
     bool isEmpty();
     void print();
+    T front();
 
-    // Métodos de Ordenamiento
-    T obtenerMin(Queue<T>, Queue<T>, T);
-    Queue<T> ordenarCola(Queue<T> colaOriginal);
+    // Metodos de Ordenamiento
+    T obtenerMin(Queue<T>& colaOriginal, Queue<T>& colaAuxiliar);
+    Queue<T> ordenarCola(Queue<T>& colaOriginal);
 };
