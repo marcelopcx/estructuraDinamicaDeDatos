@@ -20,10 +20,10 @@ void limpiarPantalla() {
     }
 }
 
-void agregarPersona() {
+void agregarUsuario() {
     system("clear");
     string nombre;
-    cout << "Ingrese el nombre de la persona: ";
+    cout << "Ingrese el nombre de la usuario: ";
     cin >> nombre; cout << endl;
     g.addVertex(nombre);
     personas[nombre] = personaCount++;
@@ -34,15 +34,15 @@ void agregarPersona() {
 void realizarFollow() {
     system("clear");
     string seguidor, seguido;
-    cout << "Ingrese el nombre de la persona que sigue: ";
+    cout << "Ingrese el nombre del usuario que sigue: ";
     cin >> seguidor;
-    cout << "Ingrese el nombre de la persona a la que sigue: ";
+    cout << "Ingrese el nombre del usuario a la que sigue: ";
     cin >> seguido; cout << endl;
     if (personas.find(seguidor) != personas.end() && personas.find(seguido) != personas.end()) {
         g.addEdge(personas[seguidor], personas[seguido], 1);
         cout << seguidor << " ahora sigue a " << seguido << "." << endl;
     } else {
-        cout << "Una o ambas personas no existen." << endl;
+        cout << "Una o ambas usuarios no existen." << endl;
     }
     limpiarPantalla();
 }
@@ -50,15 +50,15 @@ void realizarFollow() {
 void eliminarFollow() {
     system("clear");
     string seguidor, seguido;
-    cout << "Ingrese el nombre de la persona que deja de seguir: ";
+    cout << "Ingrese el nombre del usuario que deja de seguir: ";
     cin >> seguidor;
-    cout << "Ingrese el nombre de la persona a la que deja de seguir: ";
+    cout << "Ingrese el nombre del usuario a la que deja de seguir: ";
     cin >> seguido; cout << endl;
     if (personas.find(seguidor) != personas.end() && personas.find(seguido) != personas.end()) {
         g.removeEdge(personas[seguidor], personas[seguido]);
         cout << seguidor << " ha dejado de seguir a " << seguido << "." << endl;
     } else {
-        cout << "Una o ambas personas no existen." << endl;
+        cout << "Una o ambas usuarios no existen." << endl;
     }
     limpiarPantalla();
 }
@@ -66,9 +66,9 @@ void eliminarFollow() {
 void mostrarCaminoMasCorto() {
     system("clear");
     string origen, destino;
-    cout << "Ingrese el nombre de la persona de origen: ";
+    cout << "Ingrese el nombre del usuario de origen: ";
     cin >> origen;
-    cout << "Ingrese el nombre de la persona de destino: ";
+    cout << "Ingrese el nombre del usuario de destino: ";
     cin >> destino; cout << endl;
     if (personas.find(origen) != personas.end() && personas.find(destino) != personas.end()) {
         int pathLength;
@@ -84,7 +84,7 @@ void mostrarCaminoMasCorto() {
         cout << endl;
         delete[] path; // Liberar la memoria del camino
     } else {
-        cout << "Una o ambas personas no existen." << endl;
+        cout << "Una o ambas usuarios no existen." << endl;
     }
     limpiarPantalla();
 }

@@ -12,7 +12,7 @@ int main() {
         cin >> opcion;
         switch (opcion) {
             case 1:
-                agregarPersona();
+                agregarUsuario();
                 break;
             case 2:
                 realizarFollow();
